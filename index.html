@@ -9,37 +9,35 @@
   <body>
     <div class="outer">
       <div class="inner">
-
         <div class="screen">
-          <div class="display-operations">operation</div>
-          <div class="display-result">result</div>
+          <div class="display-operations" data-previous-operand></div>
+          <div class="display-result" data-current-operand>0</div>
         </div>
 
         <div class="buttons-grid">
-          <button class="clear span-2" data-action="reset">AC</button>
-          <button class="delete span-2" data-action="back">DEL</button>
+          <button class="clear span-2" data-all-clear>AC</button>
+          <button class="delete span-2" data-delete>DEL</button>
 
           <button class="digit" data-number>7</button>
           <button class="digit" data-number>8</button>
           <button class="digit" data-number>9</button>
-          <button class="operator"data-action="divide">&#247</button>
+          <button class="operator" data-operation>/</button>
 
           <button class="digit" data-number>4</button>
           <button class="digit" data-number>5</button>
           <button class="digit" data-number>6</button>
-          <button class="operator" data-action="multiply">x</button>
+          <button class="operator" data-operation>x</button>
 
           <button class="digit" data-number>3</button>
           <button class="digit" data-number>2</button>
           <button class="digit" data-number>1</button>
-          <button class="operator" data-action="subtract">-</button>
+          <button class="operator" data-operation>-</button>
 
-          <button class="period" data-action="decimal">.</button>
+          <button class="period" data-number>.</button>
           <button class="digit" data-number>0</button>
-          <button class="equal" data-action="calculate">=</button>
-          <button class="operator" data-action="add">+</button>
+          <button class="equal" data-equals>=</button>
+          <button class="operator" data-operation>+</button>
         </div>
-
       </div>
     </div>
     <script src="index.js"></script>

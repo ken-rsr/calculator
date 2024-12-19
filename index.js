@@ -1,27 +1,51 @@
-let first_digit = "null";
-let second_digit = "null"
-let operator = "null";
+let currentOperand = '' ;
+let previousOperand = ''
+let operator = null;
 
-const num_btn = document.querySelectorAll(".digit");
-const operation_btn = document.querySelectorAll(".operator");
-const display_operation_btn = document.querySelector(".display-operations");
-const display_result_btn = document.querySelector(".display-result");
-const decimal_btn = document.querySelector(".period");
-const equal_btn = document.querySelector(".equal");
-const clear_btn = document.querySelector(".clear");
-const delete_btn = document.querySelector(".delete");
+const numBtn = document.querySelectorAll("[data-number]");
+const operationBtn = document.querySelectorAll("[data-operation]");
+const equalBtn = document.querySelector("[data-equals]");
+const deleteBtn = document.querySelector("[data-delete]");
+const clearBtn = document.querySelector("[data-all-clear]");
+const upperText = document.querySelector("[data-previous-operand]");
+const lowerText = document.querySelector("[data-current-operand]");
 
-let num_array = [...num_btn];
+const multiply = (x, y) => x * y ;
+const divide = (x, y) => x / y ;
+const add = (x, y) => x + y ;
+const subtract = (x, y) => x - y ;
 
-num_array.forEach((button, index) => {
-    button.textContent = index;  // Set the visible text
-    button.value = index;       // Set the button's value attribute
-  });
-
-num_array.forEach(button => {
+numBtn.forEach(button => {
     button.addEventListener('click', () => {
-      console.log(`Button value: ${button.value}`);
-    });
-  });
+        currentOperand += button.innerText
+        console.log(currentOperand);
+        display()
+    }) 
+})
 
+operationBtn.forEach(button => {
+    button.addEventListener('click', () => {
+
+    })
+})
+
+function display(){
+    lowerText.innerText = currentOperand
+    upperText.innerText = `${currentOperand} ${operator}`
+}
+
+
+function operate (operation, num1, num2){
+    switch (operation){
+        case '+':
+            return add(num1, num2)
+        case '-':
+            return subtract(num1, num2)
+        case '*':
+            return multiply(num1, num2)
+        case '/':
+            if (num2 === 0) return null
+            return divide (num1, num2)
+    }
+}
 
